@@ -19,7 +19,8 @@ fn main() {
         .context()
         .add_font_provider(Arc::new(SystemFontProvider::new()));
     let mut file_dia = FileDialog::new()
-        .default_size(egui::vec2(640.0, 408.0))
+        .default_size(egui::vec2(640.0, 480.0))
+        .resizable(false)
         .fixed_pos([0., 0.]);
     file_dia.pick_multiple();
 
