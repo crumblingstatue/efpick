@@ -1,3 +1,5 @@
+use std::sync::Arc;
+
 use egui_file_dialog::{DialogState, FileDialog};
 use egui_sf2g::{
     SfEgui, egui,
@@ -6,12 +8,16 @@ use egui_sf2g::{
         window::{Event, Style},
     },
 };
+use egui_system_font_frog::SystemFontProvider;
 
 fn main() {
     let mut win =
         RenderWindow::new([640, 480], "efpick", Style::NONE, &Default::default()).unwrap();
     win.set_framerate_limit(60);
     let mut sf_egui = SfEgui::default();
+    sf_egui
+        .context()
+        .add_font_provider(Arc::new(SystemFontProvider::new()));
     let mut file_dia = FileDialog::new()
         .default_size(egui::vec2(640.0, 408.0))
         .fixed_pos([0., 0.]);

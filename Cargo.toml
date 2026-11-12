@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 egui-file-dialog = "0.16.0"
 egui-sf2g = "0.10.0"
+egui_system_font_frog.git = "https://github.com/crumblingstatue/egui_system_font_frog.git"
 
 [profile.release]
 codegen-units = 1
