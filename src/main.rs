@@ -12,7 +12,9 @@ fn main() {
         RenderWindow::new([640, 480], "efpick", Style::NONE, &Default::default()).unwrap();
     win.set_framerate_limit(60);
     let mut sf_egui = SfEgui::default();
-    let mut file_dia = FileDialog::new().default_size(egui::vec2(640.0, 408.0));
+    let mut file_dia = FileDialog::new()
+        .default_size(egui::vec2(640.0, 408.0))
+        .fixed_pos([0., 0.]);
     file_dia.pick_multiple();
 
     while win.is_open() {
