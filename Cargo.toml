@@ -6,3 +6,8 @@ edition = "2024"
 [dependencies]
 egui-file-dialog = "0.16.0"
 egui-sf2g = "0.10.0"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+panic = "abort"
